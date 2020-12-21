@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
+  devise_for :users
+  resources :products
+  root 'welcome#index', layout: false
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
