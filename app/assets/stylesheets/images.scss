@@ -1,0 +1,21 @@
+// Place all the styles related to the Images controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.product-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 200px);
+  gap: 16px;
+}
+
+.image-preview {
+  &__image {
+    display: block;
+    height: 150px;
+    img {
+      object-fit: contain;
+      width: 100%;
+      height: 100%;
+    }
+    background-color: black;
+  }
+}

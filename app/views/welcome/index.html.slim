@@ -1,3 +1,22 @@
-h1 Garage sale
-
-h2 Welcome to my garage sale
+.main-container
+  .main-grid
+    .grid-card.grid-card--main.grid-card--blue
+      .main-logo
+        = fa_icon "tags"
+        span Garage Sale
+      header.main-card__header
+        h1 Selling / Giving away old stuff
+      article
+        p I have recently renovated my kitchen and have no space left in my Keller so I'm getting rid of the old stuff.
+        button
+          span Questions?
+    - @products.each do |product|
+      .grid-card class='grid-card--#{random_card_color}'
+        img.grid-card__image src=product.main_image.url
+        h2.grid-card__title = product.name
+        p.grid-card__description 
+          = truncate(product.description, :length => 80)
+          = link_to 'See more', item_path(product)
+        .grid-card__price
+          = fa_icon "euro"
+          span = (product.price).round

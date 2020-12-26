@@ -1,0 +1,7 @@
+.card.image-preview
+  a.image-preview__image href=image.url target="_blank" rel="noopener noreferrer"
+    img.card-img-top alt=image.title src=image.url
+  .card-body
+    h5.card-title = image.title
+    p.card-text = image.description
+    = link_to 'Delete image', [image.product, image], method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-sm btn-danger'

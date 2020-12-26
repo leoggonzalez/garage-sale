@@ -1,4 +1,4 @@
-header.mb-5 
+header.mb-3 
   h2 = @product.name 
 
 ul.list-group
@@ -17,6 +17,14 @@ ul.list-group
   li.list-group-item
     strong.mr-2 Price:
     = @product.price
+  li.list-group-item
+    strong.mr-2 Images:
+    .product-images
+      = render @product.images
+    .mt-3
+    strong Add Image
+    = render 'images/form'
+
 
 footer.mt-3
   = link_to 'Edit', edit_product_path(@product), class: 'btn btn-warning mr-3'

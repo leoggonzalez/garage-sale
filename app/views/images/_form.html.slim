@@ -1,0 +1,11 @@
+= form_with model: [ @product, @product.images.build ], class: 'form-inline' do |form|
+  .form-group
+    = form.label :url
+    = form.text_field :url, class: 'form-control form-control-sm ml-1', required: true, type: 'url'
+  .form-group.ml-2
+    = form.label :title
+    = form.text_field :title, class: 'form-control form-control-sm ml-1', required: true
+  .form-group.ml-2
+    = form.label :description
+    = form.text_field :description, class: 'form-control form-control-sm ml-1'
+  = form.submit 'Add Image', class: 'btn btn-primary btn-sm ml-2'

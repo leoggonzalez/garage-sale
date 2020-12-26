@@ -1,5 +1,5 @@
-class WelcomeController < ApplicationController
-  def index
+class ItemsController < ApplicationController
+  def show
     @products = Product.all
     
     render layout: "welcome"
