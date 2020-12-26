@@ -11,10 +11,11 @@
 </head>
 
 <body>
-  <%= render 'components/navbar' %>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <div class="mb-5">
+    <%= render 'components/navbar' %>
+  </div>
   <div class="container">
+    <%= render 'layouts/alerts' %>
     <%= yield %>
   </div>
 </body>

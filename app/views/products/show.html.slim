@@ -1,0 +1,23 @@
+header.mb-5 
+  h2 = @product.name 
+
+ul.list-group
+  li.list-group-item 
+    strong.mr-2 ID:
+    = @product.id
+  li.list-group-item 
+    strong.mr-2 Name:
+    = @product.name
+  li.list-group-item
+    strong.mr-2 Description:
+    = @product.description
+  li.list-group-item
+    strong.mr-2 Link:
+    = @product.url
+  li.list-group-item
+    strong.mr-2 Price:
+    = @product.price
+
+footer.mt-3
+  = link_to 'Edit', edit_product_path(@product), class: 'btn btn-warning mr-3'
+  = link_to 'Back', products_path, class: 'btn btn-link'
