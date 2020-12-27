@@ -2,18 +2,25 @@
   .main-grid
     .grid-card.grid-card--main.grid-card--blue
       .main-logo
-        = fa_icon "tags"
-        span Garage Sale
-      header.main-card__header
-        h1 Selling / Giving away old stuff
-      article
-        p I have recently renovated my kitchen and have no space left in my Keller so I'm getting rid of the old stuff.
-        button
-          span Questions?
+        .main-logo__icon
+          = fa_icon "tags"
+        .main-logo__text Garage Sale
+      .grid-card__main
+        .grid-card__content
+          header.grid-card__header
+            h1.grid-card__title Selling / Giving away old stuff
+          article
+            p.grid-card__description I have recently renovated my kitchen and have no space left in my Keller so I'm getting rid of the old stuff.
+          footer.grid-card__footer
+            a.button.button--whatsapp href="https://wa.me/00491778757134?text=Tell%20me%20more%20about%20your%20garage%20sale!" target="_blank" rel="noopener noreferrer"
+              span.button__icon = fa_icon "whatsapp"
+              span Questions?
+        .grid-card__illustration
+          img src=image_url('kitchen.svg') alt=""/
     - @products.each do |product|
       .grid-card class='grid-card--#{random_card_color}'
         img.grid-card__image src=product.main_image.url
-        h2.grid-card__title = product.name
+        h4.grid-card__title = product.name
         p.grid-card__description 
           = truncate(product.description, :length => 80)
           = link_to 'See more', item_path(product)

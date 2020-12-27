@@ -9,6 +9,8 @@
   --color-green-light: #bcff9d;
   --color-yellow: #f9f871;
   --card-border-radius: 24px;
+  --font-title: "Manjari", sans-serif;
+  --font-text: "Raleway", sans-serif;
 }
 
 .main-container {
@@ -24,6 +26,27 @@
   gap: 32px;
 }
 
+.main-logo {
+  display: flex;
+  align-items: center;
+  &__icon {
+    background-color: #00a1f2;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    margin-right: 8px;
+  }
+  &__text {
+    font-family: var(--font-title);
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
 .grid-card {
   background-color: gray;
   border-radius: var(--card-border-radius);
@@ -31,7 +54,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: "Poppins", sans-serif;
+  font-family: var(--font-text);
   &__image {
     max-width: 100%;
     height: 230px;
@@ -39,8 +62,7 @@
     margin: auto 0;
   }
   &__title {
-    font-family: "Nunito", sans-serif;
-    font-size: 32px;
+    font-family: var(--font-title);
     font-weight: bold;
   }
   &__description {
@@ -61,8 +83,35 @@
 
   &--main {
     grid-column: span 2;
-    display: block;
     background-color: var(--color-blue);
+    align-items: flex-start;
+    justify-content: center;
+    padding: 32px;
+    .grid-card {
+      &__main {
+        display: flex;
+        align-items: center;
+      }
+      &__content {
+        width: 60%;
+      }
+      &__illustration {
+        width: 40%;
+        padding: 16px;
+        img {
+          width: 100%;
+        }
+      }
+      &__header {
+        margin: 24px 0 18px;
+      }
+      &__description {
+        font-size: 18px;
+      }
+      &__footer {
+        margin-top: 18px;
+      }
+    }
   }
   &--blue-light {
     background-color: var(--color-blue-light);
@@ -78,5 +127,35 @@
   }
   &--yellow {
     background-color: var(--color-yellow);
+  }
+}
+
+.button {
+  background-color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 32px;
+  display: inline-block;
+  &__icon {
+    margin-right: 8px;
+  }
+  &:hover {
+    text-decoration: none;
+    color: inherit;
+  }
+  &:active,
+  &:focus {
+    outline: none;
+  }
+  &--whatsapp {
+    background-color: #00c6af;
+    color: #fafafa;
+    &:hover {
+      color: #fafafa;
+      background-color: #268578;
+    }
+    &:active {
+      background-color: #344b47;
+    }
   }
 }
