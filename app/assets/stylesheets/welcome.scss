@@ -8,6 +8,15 @@
   --color-green: #8effcd;
   --color-green-light: #bcff9d;
   --color-yellow: #f9f871;
+  --color-whatsapp: #00c6af;
+  --color-whatsapp-dark: #268578;
+  --color-whatsapp-darker: #344b47;
+  --color-facebook: #8fb3cb;
+  --color-facebook-dark: #60849b;
+  --color-facebook-darker: #33586d;
+  --color-mail: #9c87b4;
+  --color-mail-dark: #956890;
+  --color-mail-darker: #8b4968;
   --card-border-radius: 24px;
   --font-title: "Manjari", sans-serif;
   --font-text: "Raleway", sans-serif;
@@ -21,8 +30,7 @@
 
 .main-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(auto-fit, 448px);
+  grid-template-columns: repeat(12, 1fr);
   gap: 32px;
 }
 
@@ -50,16 +58,23 @@
 .grid-card {
   background-color: gray;
   border-radius: var(--card-border-radius);
-  padding: 16px;
+  padding: 32px;
   display: flex;
+  height: 448px;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   font-family: var(--font-text);
+  grid-column: span 4;
   &__image {
-    max-width: 100%;
-    height: 230px;
-    border-radius: var(--card-border-radius);
-    margin: auto 0;
+    display: block;
+    margin-bottom: 16px;
+    img {
+      max-width: 100%;
+      height: 230px;
+      border-radius: var(--card-border-radius);
+      margin: auto 0;
+    }
   }
   &__title {
     font-family: var(--font-title);
@@ -81,12 +96,78 @@
     }
   }
 
+  &--2 {
+    grid-column: span 8;
+  }
+
+  &--icon {
+    grid-column: span 3;
+    height: 280px;
+    color: #343434;
+    i {
+      font-size: 90px;
+    }
+    &:hover {
+      color: #343434;
+      text-decoration: none;
+    }
+  }
+
+  &--whatsapp {
+    background-color: var(--color-whatsapp);
+    color: #fafafa;
+    &:hover {
+      color: #fafafa;
+      background-color: var(--color-whatsapp-dark);
+    }
+    &:active {
+      background-color: var(--color-whatsapp-darker);
+    }
+  }
+
+  &--facebook {
+    background-color: var(--color-facebook);
+    color: #fafafa;
+    &:hover {
+      color: #fafafa;
+      background-color: var(--color-facebook-dark);
+    }
+    &:active {
+      background-color: var(--color-facebook-darker);
+    }
+  }
+
+  &--mail {
+    background-color: var(--color-mail);
+    color: #fafafa;
+    &:hover {
+      color: #fafafa;
+      background-color: var(--color-mail-dark);
+    }
+    &:active {
+      background-color: var(--color-mail-darker);
+    }
+  }
+
+  &--blue-light {
+    background-color: var(--color-blue-light);
+  }
+  &--cyan {
+    background-color: var(--color-cyan);
+  }
+  &--green {
+    background-color: var(--color-green);
+  }
+  &--green-light {
+    background-color: var(--color-green-light);
+  }
+  &--yellow {
+    background-color: var(--color-yellow);
+  }
+
   &--main {
-    grid-column: span 2;
     background-color: var(--color-blue);
     align-items: flex-start;
-    justify-content: center;
-    padding: 32px;
     .grid-card {
       &__main {
         display: flex;
@@ -113,20 +194,24 @@
       }
     }
   }
-  &--blue-light {
-    background-color: var(--color-blue-light);
+
+  &--item {
+    .grid-card__price {
+      font-size: 48px;
+    }
   }
-  &--cyan {
-    background-color: var(--color-cyan);
-  }
-  &--green {
-    background-color: var(--color-green);
-  }
-  &--green-light {
-    background-color: var(--color-green-light);
-  }
-  &--yellow {
-    background-color: var(--color-yellow);
+
+  &--image {
+    position: relative;
+    overflow: hidden;
+    background-color: #343434;
+    .slider {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
   }
 }
 
@@ -148,14 +233,14 @@
     outline: none;
   }
   &--whatsapp {
-    background-color: #00c6af;
+    background-color: var(--color-whatsapp);
     color: #fafafa;
     &:hover {
       color: #fafafa;
-      background-color: #268578;
+      background-color: var(--color-whatsapp-dark);
     }
     &:active {
-      background-color: #344b47;
+      background-color: var(--color-whatsapp-darker);
     }
   }
 }

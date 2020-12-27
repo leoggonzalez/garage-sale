@@ -15,3 +15,59 @@ require("channels");
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 import "bootstrap";
+
+document.addEventListener("turbolinks:load", function () {
+  const sliders = document.querySelectorAll(".slider");
+  sliders.forEach((slider) => {
+    // 1. Initiate
+    const slides = slider.querySelectorAll(".slider__slide");
+    // Enumerate slides
+    slides.forEach((slide, index) => {
+      slide.setAttribute("data-number", index);
+    });
+    const previousArrow = slider.querySelector(".slider__arrow--previous");
+    const nextArrow = slider.querySelector(".slider__arrow--next");
+    // Hide arrows if there's only one slide
+    if (slides.length === 1) {
+      previousArrow.classList.add("hidden");
+      nextArrow.classList.add("hidden");
+    }
+    // Make the first one active
+    if (slides.length) {
+      slides[0].classList.add("active");
+    }
+    // 2. Arrow functionality
+    nextArrow.addEventListener("click", () => {
+      const activeSlide = slider.querySelector(".slider__slide.active");
+      if (activeSlide) {
+        const number = activeSlide.dataset.number;
+        let nextSlide = null;
+        if (number < slides.length - 1) {
+          nextSlide = slides.item(number + 1);
+        } else {
+          nextSlide = slides.item(0);
+        }
+        if (nextSlide) {
+          activeSlide.classList.remove("active");
+          nextSlide.classList.add("active");
+        }
+      }
+    });
+    previousArrow.addEventListener("click", () => {
+      const activeSlide = slider.querySelector(".slider__slide.active");
+      if (activeSlide) {
+        const number = activeSlide.dataset.number;
+        let nextSlide = null;
+        if (number > 0) {
+          nextSlide = slides.item(number - 1);
+        } else {
+          nextSlide = slides.item(slides.length - 1);
+        }
+        if (nextSlide) {
+          activeSlide.classList.remove("active");
+          nextSlide.classList.add("active");
+        }
+      }
+    });
+  });
+});
