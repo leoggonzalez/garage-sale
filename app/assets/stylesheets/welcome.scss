@@ -8,6 +8,11 @@
   --color-green: #8effcd;
   --color-green-light: #bcff9d;
   --color-yellow: #f9f871;
+  --color-pink: #dfbdd3;
+  --color-beige: #f7dbc1;
+  --color-salmon: #ffadaa;
+  --color-purple: #dfbdd3;
+  --color-gray: #9aaebc;
   --color-whatsapp: #00c6af;
   --color-whatsapp-dark: #268578;
   --color-whatsapp-darker: #344b47;
@@ -18,8 +23,8 @@
   --color-mail-dark: #956890;
   --color-mail-darker: #8b4968;
   --card-border-radius: 24px;
-  --font-title: "Manjari", sans-serif;
-  --font-text: "Raleway", sans-serif;
+  --font-title: "Nunito", sans-serif;
+  --font-text: "Poppins", sans-serif;
 }
 
 .main-container {
@@ -91,6 +96,7 @@
     margin-top: 8px;
     font-size: 32px;
     font-weight: bold;
+    font-family: var(--font-title);
     i {
       margin-right: 4px;
     }
@@ -108,43 +114,46 @@
       font-size: 90px;
     }
     &:hover {
-      color: #343434;
+      color: #fafafa;
       text-decoration: none;
     }
   }
 
   &--whatsapp {
     background-color: var(--color-whatsapp);
-    color: #fafafa;
+    color: var(--color-whatsapp-dark);
     &:hover {
-      color: #fafafa;
+      color: var(--color-whatsapp);
       background-color: var(--color-whatsapp-dark);
     }
     &:active {
+      color: var(--color-whatsapp-dark);
       background-color: var(--color-whatsapp-darker);
     }
   }
 
   &--facebook {
     background-color: var(--color-facebook);
-    color: #fafafa;
+    color: var(--color-facebook-dark);
     &:hover {
-      color: #fafafa;
+      color: var(--color-facebook);
       background-color: var(--color-facebook-dark);
     }
     &:active {
+      color: var(--color-facebook-dark);
       background-color: var(--color-facebook-darker);
     }
   }
 
   &--mail {
     background-color: var(--color-mail);
-    color: #fafafa;
+    color: var(--color-mail-darker);
     &:hover {
-      color: #fafafa;
+      color: var(--color-mail);
       background-color: var(--color-mail-dark);
     }
     &:active {
+      color: var(--color-mail-dark);
       background-color: var(--color-mail-darker);
     }
   }
@@ -163,6 +172,21 @@
   }
   &--yellow {
     background-color: var(--color-yellow);
+  }
+  &--pink {
+    background-color: var(--color-pink);
+  }
+  &--beige {
+    background-color: var(--color-beige);
+  }
+  &--salmon {
+    background-color: var(--color-salmon);
+  }
+  &--purple {
+    background-color: var(--color-purple);
+  }
+  &--gray {
+    background-color: var(--color-gray);
   }
 
   &--main {

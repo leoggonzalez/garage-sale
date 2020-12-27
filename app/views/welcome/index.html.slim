@@ -21,7 +21,7 @@
       img src=product.main_image.url
     h4.grid-card__title = product.name
     p.grid-card__description 
-      = truncate(product.description, :length => 80)
+      = truncate(product.description, :length => 60)
       = link_to 'See more', item_path(product)
     .grid-card__price
       = fa_icon "euro"
