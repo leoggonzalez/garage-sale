@@ -1,0 +1,175 @@
+.grid-card {
+  background-color: gray;
+  border-radius: var(--card-border-radius);
+  padding: 24px;
+  font-family: var(--font-text);
+  grid-column: span 12;
+  &__image {
+    display: block;
+    img {
+      height: 224px;
+      max-width: 100%;
+      border-radius: var(--card-border-radius);
+      margin: auto 0;
+    }
+  }
+  &__title {
+    font-family: var(--font-title);
+    font-weight: bold;
+  }
+  &__description {
+    font-size: 16px;
+    margin: 0;
+    a {
+      margin-left: 8px;
+    }
+  }
+  &__price {
+    h3 {
+      font-weight: bold;
+      font-family: var(--font-title);
+    }
+    i {
+      margin-right: 4px;
+    }
+  }
+
+  &--2 {
+    grid-column: span 12;
+  }
+
+  @media (min-width: 600px) {
+    grid-column: span 6;
+    &--2 {
+      grid-column: span 12;
+    }
+  }
+  @media (min-width: 1024px) {
+    grid-column: span 4;
+    padding: 32px;
+    &--2 {
+      grid-column: span 8;
+    }
+  }
+}
+
+.grid-card--image {
+  position: relative;
+  overflow: hidden;
+  background-color: #343434;
+  min-height: 300px;
+  .slider {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+  @media screen and (min-width: 1024px) {
+    min-height: initial;
+  }
+}
+
+.grid-card--icon {
+  grid-column: span 6;
+  color: #343434;
+  position: relative;
+  .placeholder {
+    padding-top: 100%;
+    width: 100%;
+  }
+  i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+  }
+  &:hover {
+    color: #fafafa;
+    text-decoration: none;
+  }
+  @media (min-width: 400px) {
+    grid-column: span 3;
+    i {
+      font-size: 35px;
+    }
+  }
+  @media (min-width: 600px) {
+    i {
+      font-size: 60px;
+    }
+  }
+}
+
+.grid-card {
+  &--whatsapp {
+    background-color: var(--color-whatsapp);
+    color: var(--color-whatsapp-dark);
+    &:hover {
+      color: var(--color-whatsapp);
+      background-color: var(--color-whatsapp-dark);
+    }
+    &:active {
+      color: var(--color-whatsapp-dark);
+      background-color: var(--color-whatsapp-darker);
+    }
+  }
+
+  &--facebook {
+    background-color: var(--color-facebook);
+    color: var(--color-facebook-dark);
+    &:hover {
+      color: var(--color-facebook);
+      background-color: var(--color-facebook-dark);
+    }
+    &:active {
+      color: var(--color-facebook-dark);
+      background-color: var(--color-facebook-darker);
+    }
+  }
+
+  &--mail {
+    background-color: var(--color-mail);
+    color: var(--color-mail-darker);
+    &:hover {
+      color: var(--color-mail);
+      background-color: var(--color-mail-dark);
+    }
+    &:active {
+      color: var(--color-mail-dark);
+      background-color: var(--color-mail-darker);
+    }
+  }
+
+  &--blue-light {
+    background-color: var(--color-blue-light);
+  }
+  &--cyan {
+    background-color: var(--color-cyan);
+  }
+  &--green {
+    background-color: var(--color-green);
+  }
+  &--green-light {
+    background-color: var(--color-green-light);
+  }
+  &--yellow {
+    background-color: var(--color-yellow);
+  }
+  &--pink {
+    background-color: var(--color-pink);
+  }
+  &--beige {
+    background-color: var(--color-beige);
+  }
+  &--salmon {
+    background-color: var(--color-salmon);
+  }
+  &--purple {
+    background-color: var(--color-purple);
+  }
+  &--gray {
+    background-color: var(--color-gray);
+  }
+}

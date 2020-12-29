@@ -10,10 +10,63 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require bootstrap
  *= require_tree .
  *= require_self
- *= require bootstrap
  *= require font-awesome
  */
-/* @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Poppins&display=swap"); */
-@import url("https://fonts.googleapis.com/css2?family=Manjari:wght@400;700&family=Raleway&display=swap");
+
+:root {
+  --color-blue: #c0e5fe;
+  --color-blue-light: #9cf0ff;
+  --color-cyan: #81fbf2;
+  --color-green: #8effcd;
+  --color-green-light: #bcff9d;
+  --color-yellow: #f9f871;
+  --color-pink: #dfbdd3;
+  --color-beige: #f7dbc1;
+  --color-salmon: #ffadaa;
+  --color-purple: #dfbdd3;
+  --color-gray: #9aaebc;
+  --color-whatsapp: #00c6af;
+  --color-whatsapp-dark: #268578;
+  --color-whatsapp-darker: #344b47;
+  --color-facebook: #8fb3cb;
+  --color-facebook-dark: #60849b;
+  --color-facebook-darker: #33586d;
+  --color-mail: #9c87b4;
+  --color-mail-dark: #956890;
+  --color-mail-darker: #8b4968;
+  --card-border-radius: 24px;
+  /* Fonts */
+  --font-title: "Nunito", sans-serif;
+  --font-text: "Poppins", sans-serif;
+  /* Components */
+  --card-height: 448px;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+h1 {
+  font-size: 1.5em;
+}
+h2 {
+  font-size: 1.3em;
+}
+h3 {
+  font-size: 1.2em;
+}
+@media (min-width: 1144px) {
+  h1 {
+    font-size: 2em;
+  }
+  h2 {
+    font-size: 1.8em;
+  }
+  h3 {
+    font-size: 1.5em;
+  }
+}

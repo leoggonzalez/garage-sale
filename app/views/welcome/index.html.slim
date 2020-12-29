@@ -1,28 +1,32 @@
 .grid-card.grid-card--main.grid-card--blue.grid-card--2
-  .main-logo
-    .main-logo__icon
-      = fa_icon "tags"
-    .main-logo__text Garage Sale
-  .grid-card__main
-    .grid-card__content
-      header.grid-card__header
-        h1.grid-card__title Selling / Giving away old stuff
-      article
-        p.grid-card__description I have recently renovated my kitchen and have no space left in my Keller so I'm getting rid of the old stuff.
-      footer.grid-card__footer
-        a.button.button--whatsapp href="https://wa.me/00491778757134?text=Tell%20me%20more%20about%20your%20garage%20sale!" target="_blank" rel="noopener noreferrer"
-          span.button__icon = fa_icon "whatsapp"
-          span Questions?
-    .grid-card__illustration
-      img src=image_url('kitchen.svg') alt=""/
+  .stack.stack--left
+    .main-logo
+      .main-logo__icon
+        = fa_icon "tags"
+      .main-logo__text Garage Sale
+    .grid-card__main
+      .grid-card__content
+        .stack.stack--left
+          header.grid-card__header
+            h1.grid-card__title Selling / Giving away old stuff
+          article
+            p.grid-card__description I have recently renovated my kitchen and have no space left in my Keller so I'm getting rid of the old stuff.
+      .grid-card__illustration
+        img src=image_url('kitchen.svg') alt=""/
+    footer.grid-card__footer
+      a.button.button--whatsapp href="https://wa.me/00491778757134?text=Tell%20me%20more%20about%20your%20garage%20sale!" target="_blank" rel="noopener noreferrer"
+        span.button__icon = fa_icon "whatsapp"
+        span Questions?
 - @products.each do |product|
   .grid-card class='grid-card--#{random_card_color}'
-    a.grid-card__image href=item_path(product)
-      img src=product.main_image.url
-    h4.grid-card__title = product.name
-    p.grid-card__description 
-      = truncate(product.description, :length => 60)
-      = link_to 'See more', item_path(product)
-    .grid-card__price
-      = fa_icon "euro"
-      span = (product.price).round
+    .stack
+      a.grid-card__image href=item_path(product)
+        img src=product.main_image.url
+      h2.grid-card__title = product.name
+      p.grid-card__description 
+        = truncate(product.description, :length => 60)
+        = link_to 'See more', item_path(product)
+      footer.grid-card__price
+        h3
+          = fa_icon "euro"
+          span = (product.price).round

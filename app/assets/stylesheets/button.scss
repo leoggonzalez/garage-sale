@@ -1,0 +1,29 @@
+.button {
+  background-color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 32px;
+  display: inline-block;
+  &__icon {
+    margin-right: 8px;
+  }
+  &:hover {
+    text-decoration: none;
+    color: inherit;
+  }
+  &:active,
+  &:focus {
+    outline: none;
+  }
+  &--whatsapp {
+    background-color: var(--color-whatsapp);
+    color: #fafafa;
+    &:hover {
+      color: #fafafa;
+      background-color: var(--color-whatsapp-dark);
+    }
+    &:active {
+      background-color: var(--color-whatsapp-darker);
+    }
+  }
+}

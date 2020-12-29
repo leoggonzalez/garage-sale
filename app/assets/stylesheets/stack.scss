@@ -1,0 +1,8 @@
+.stack {
+  display: grid;
+  gap: 16px;
+  justify-items: center;
+  &--left {
+    justify-items: start;
+  }
+}
