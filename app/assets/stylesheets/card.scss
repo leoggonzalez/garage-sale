@@ -4,6 +4,8 @@
   padding: 24px;
   font-family: var(--font-text);
   grid-column: span 12;
+  display: flex;
+  align-items: center;
   &__image {
     display: block;
     img {
@@ -66,7 +68,7 @@
     position: absolute;
   }
   @media screen and (min-width: 1024px) {
-    min-height: initial;
+    min-height: 448px;
   }
 }
 
@@ -175,8 +177,6 @@
 }
 
 .grid-card--avatar {
-  display: flex;
-  align-items: center;
   .grid-card {
     &__image {
       img {
