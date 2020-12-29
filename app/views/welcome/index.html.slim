@@ -30,3 +30,16 @@
         h3
           = fa_icon "euro"
           span = (product.price).round
+.grid-card.grid-card--avatar class='grid-card--#{random_card_color}'
+  .stack
+    .grid-card__image
+      img src="https://i.imgur.com/OJhIQmg.jpg"
+    h2.grid-card__title About me
+    p.grid-card__description My name is Leo Gonzalez. I'm a web developer from Argentina living in Berlin.
+    footer
+      a.button.button--icon.button--wsp href="https://wa.me/00491778757134?text=Tell%20me%20more%20about%20your%20garage%20sale!" target="_blank" rel="noopener noreferrer"
+        = fa_icon "whatsapp"
+      a.button.button--icon.button--instagram href="https://www.instagram.com/leoggonzalez/" target="_blank" rel="noopener noreferrer"
+        = fa_icon "instagram"
+      a.button.button--icon.button--mail href="https://www.linkedin.com/in/leoggonzalez/" target="_blank" rel="noopener noreferrer"
+        = fa_icon "linkedin"
