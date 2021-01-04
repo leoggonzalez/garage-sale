@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   # Frontend
   resources :products, only: :show
   get '/admin', to: 'admin/products#index'
+  get '/products', to: 'welcome#index'
   root 'welcome#index'
 end
