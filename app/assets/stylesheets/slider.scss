@@ -26,10 +26,9 @@
   &__arrow {
     user-select: none;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    transform-origin: center;
-    transition: 0.1s;
+    height: 100%;
+    display: flex;
+    align-items: center;
     font-size: 32px;
     z-index: 1;
     color: white;
@@ -38,13 +37,33 @@
       display: none;
     }
     &--previous {
-      left: 16px;
+      padding-left: 16px;
+      padding-right: 8px;
+      left: 0;
     }
     &--next {
-      right: 16px;
+      right: 0;
+      padding-right: 16px;
+      padding-left: 8px;
     }
     &:hover {
-      transform: translateY(-50%) scale(1.1);
+      i {
+        animation: wiggle 0.25s ease-in-out;
+      }
     }
+  }
+}
+
+@keyframes wiggle {
+  0%,
+  50%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(4px);
+  }
+  75% {
+    transform: translateX(-4px);
   }
 }
