@@ -1,0 +1,10 @@
+<h1>Editing Product</h1>
+
+<div class="card p-3 mb-3">
+  <%= render 'form', product: @product %>
+</div>
+
+<footer>
+  <%= link_to 'Show', admin_product_path(@product), class: 'btn btn-info' %>
+  <%= link_to 'Back', admin_products_path, class: 'btn btn-link' %>
+</footer>

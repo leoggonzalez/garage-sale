@@ -12,7 +12,7 @@
           article
             p.grid-card__description I have recently renovated my kitchen and have no space left in my Keller so I'm getting rid of the old stuff.
       .grid-card__illustration
-        img src=image_url('kitchen.svg') alt=""/
+        img src=image_url('kitchen.svg') alt=""
     footer.grid-card__footer
       a.button.button--whatsapp href="whatsapp://send/?phone=491778757134&text=Tell%20me%20more%20about%20your%20garage%20sale!" target="_blank" rel="noopener noreferrer"
         span.button__icon = fa_icon "whatsapp"
@@ -20,12 +20,12 @@
 - @products.each do |product|
   .grid-card class='grid-card--#{random_card_color}'
     .stack
-      a.grid-card__image href=item_path(product)
+      a.grid-card__image href=product_path(product)
         img src=product.main_image.url
       h2.grid-card__title = product.name
       p.grid-card__description 
         = truncate(product.description, :length => 60)
-        = link_to 'See more', item_path(product)
+        = link_to 'See more', product_path(product)
       footer.grid-card__price
         h3
           = fa_icon "euro"

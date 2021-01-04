@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+  # Admin
   devise_for :users
-  resources :products do
-    resources :images
+  namespace :admin do
+    resources :products do
+      resources :images
+    end
   end
+  # Frontend
+  resources :products, only: :show
+  get '/admin', to: 'admin/products#index'
   root 'welcome#index'
-  get '/items/:id', to: 'items#show', as: 'item'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -4,4 +4,4 @@
   .card-body
     h5.card-title = image.title
     p.card-text = image.description
-    = link_to 'Delete image', [image.product, image], method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-sm btn-danger'
+    = link_to 'Delete image', admin_product_image_path(image.product, image), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-sm btn-danger btn-block'

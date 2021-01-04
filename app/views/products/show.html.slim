@@ -1,31 +1,33 @@
-header.mb-3 
-  h2 = @product.name 
-
-ul.list-group
-  li.list-group-item 
-    strong.mr-2 ID:
-    = @product.id
-  li.list-group-item 
-    strong.mr-2 Name:
-    = @product.name
-  li.list-group-item
-    strong.mr-2 Description:
-    = @product.description
-  li.list-group-item
-    strong.mr-2 Link:
-    = @product.url
-  li.list-group-item
-    strong.mr-2 Price:
-    = @product.price
-  li.list-group-item
-    strong.mr-2 Images:
-    .product-images
-      = render @product.images
-    .mt-3
-    strong Add Image
-    = render 'images/form'
-
-
-footer.mt-3
-  = link_to 'Edit', edit_product_path(@product), class: 'btn btn-warning mr-3'
-  = link_to 'Back', products_path, class: 'btn btn-link'
+.grid-card.grid-card--item class='grid-card--#{random_card_color}'
+  .stack.stack--left
+    h2.grid-card__title = @product.name
+    p.grid-card__description 
+      = @product.description
+    a href=@product.url target="_blank" rel="noopener noreferrer" More Info
+    .grid-card__price
+      h2
+        = fa_icon "euro"
+        span = (@product.price).round
+.grid-card.grid-card--image.grid-card--2
+  .slider
+    .slider__arrow.slider__arrow--previous
+      = fa_icon "arrow-circle-left"
+    .slider__track
+      - @product.images.each do |image|
+        .slider__slide
+          a href=image.url target="_blank" rel="noopener noreferrer"
+            img src=image.url
+    .slider__arrow.slider__arrow--next
+      = fa_icon "arrow-circle-right"
+a.grid-card.grid-card--icon.grid-card--whatsapp href="whatsapp://send/?phone=491778757134&text=Hi%20I'm%20interested%20in%20this%20item:%20#{request.original_url}" target="_blank" rel="noopener noreferrer"
+  .placeholder
+  = fa_icon 'whatsapp'
+a.grid-card.grid-card--icon.grid-card--facebook href="http://m.me/leosgaragesale?ref=hello" target="_blank" rel="noopener noreferrer"
+  .placeholder
+  = fa_icon 'facebook'
+a.grid-card.grid-card--icon.grid-card--mail href="mailto:leogabrielgonzalez@gmail.com?subject=#{@product.name}&body=Hi%20I'm%20interested%20in%20this%20item:%20#{request.original_url}" target="_blank" rel="noopener noreferrer"
+  .placeholder
+  = fa_icon 'envelope'
+a.grid-card.grid-card--icon href=root_path class='grid-card--#{random_card_color}'
+  .placeholder
+  = fa_icon 'arrow-left'
