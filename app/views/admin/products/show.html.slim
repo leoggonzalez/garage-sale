@@ -12,11 +12,15 @@ ul.list-group
     strong.mr-2 Description:
     = @product.description
   li.list-group-item
-    strong.mr-2 Link:
-    = @product.url
+    strong.mr-2 Url:
+    a href=@product.url target="_blank" rel="noopener noreferrer"
+      = @product.url
   li.list-group-item
     strong.mr-2 Price:
     = @product.price
+  li.list-group-item
+    strong.mr-2 Reserved:
+    = @product.reserved ? 'Yes' : 'No'
   li.list-group-item
     strong.mr-2 Images:
     .product-images

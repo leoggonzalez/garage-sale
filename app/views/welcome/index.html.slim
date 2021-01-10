@@ -18,10 +18,11 @@
         span.button__icon = fa_icon "whatsapp"
         span Questions?
 - @products.each do |product|
-  .grid-card class='grid-card--#{random_card_color}'
+  .grid-card class='grid-card--#{random_card_color}' class=('grid-card--reserved' if product.reserved?)
     .stack
-      a.grid-card__image href=product_path(product)
-        img src=product.main_image.url
+      - if product.main_image
+        a.grid-card__image href=product_path(product)
+          img src=product.main_image.url
       h2.grid-card__title = product.name
       p.grid-card__description 
         = truncate(product.description, :length => 60)
@@ -41,5 +42,5 @@
         = fa_icon "whatsapp"
       a.button.button--icon.button--instagram href="https://www.instagram.com/leoggonzalez/" target="_blank" rel="noopener noreferrer"
         = fa_icon "instagram"
-      a.button.button--icon.button--mail href="https://www.linkedin.com/in/leoggonzalez/" target="_blank" rel="noopener noreferrer"
+      a.button.button--icon.button--linkedin href="https://www.linkedin.com/in/leoggonzalez/" target="_blank" rel="noopener noreferrer"
         = fa_icon "linkedin"

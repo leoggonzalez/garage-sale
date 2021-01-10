@@ -30,7 +30,7 @@ class Slider {
     );
     this.nextArrow = this.container.querySelector(".slider__arrow--next");
     // Hide arrows if there's only one slide
-    if (this.slides.length === 1) {
+    if (this.slides.length < 2) {
       this.previousArrow.classList.add("hidden");
       this.nextArrow.classList.add("hidden");
     }

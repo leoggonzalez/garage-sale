@@ -27,7 +27,9 @@
   --color-beige: #f7dbc1;
   --color-salmon: #ffadaa;
   --color-purple: #dfbdd3;
+  --color-gray-light: #d4eae6;
   --color-gray: #9aaebc;
+  --color-gray-dark: #768996;
   --color-whatsapp: #00c6af;
   --color-whatsapp-dark: #268578;
   --color-whatsapp-darker: #344b47;
@@ -37,6 +39,7 @@
   --color-mail: #9c87b4;
   --color-mail-dark: #956890;
   --color-mail-darker: #8b4968;
+  --color-red-reserved: #b3232d;
   --card-border-radius: 24px;
   /* Fonts */
   --font-title: "Nunito", sans-serif;

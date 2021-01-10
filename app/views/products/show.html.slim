@@ -1,4 +1,4 @@
-.grid-card.grid-card--item class='grid-card--#{random_card_color}'
+.grid-card.grid-card--item class='grid-card--#{random_card_color}' class=('grid-card--reserved' if @product.reserved?)
   .stack.stack--left
     h2.grid-card__title = @product.name
     p.grid-card__description 
@@ -19,13 +19,13 @@
             img src=image.url
     .slider__arrow.slider__arrow--next
       = fa_icon "arrow-circle-right"
-a.grid-card.grid-card--icon.grid-card--whatsapp href="whatsapp://send/?phone=491778757134&text=Hi%20I'm%20interested%20in%20this%20item:%20#{request.original_url}" target="_blank" rel="noopener noreferrer"
+a.grid-card.grid-card--icon.grid-card--whatsapp class=('grid-card--disabled' if @product.reserved?) href=("whatsapp://send/?phone=491778757134&text=Hi%20I'm%20interested%20in%20this%20item:%20#{request.original_url}" if !@product.reserved?) target="_blank" rel="noopener noreferrer"
   .placeholder
   = fa_icon 'whatsapp'
-a.grid-card.grid-card--icon.grid-card--facebook href="http://m.me/leosgaragesale?ref=hello" target="_blank" rel="noopener noreferrer"
+a.grid-card.grid-card--icon.grid-card--facebook class=('grid-card--disabled' if @product.reserved?) href=("http://m.me/leosgaragesale?ref=hello" if !@product.reserved?) target="_blank" rel="noopener noreferrer"
   .placeholder
   = fa_icon 'facebook'
-a.grid-card.grid-card--icon.grid-card--mail href="mailto:leogabrielgonzalez@gmail.com?subject=#{@product.name}&body=Hi%20I'm%20interested%20in%20this%20item:%20#{request.original_url}" target="_blank" rel="noopener noreferrer"
+a.grid-card.grid-card--icon.grid-card--mail class=('grid-card--disabled' if @product.reserved?) href=("mailto:leogabrielgonzalez@gmail.com?subject=#{@product.name}&body=Hi%20I'm%20interested%20in%20this%20item:%20#{request.original_url}" if !@product.reserved?) target="_blank" rel="noopener noreferrer"
   .placeholder
   = fa_icon 'envelope'
 a.grid-card.grid-card--icon href=root_path class='grid-card--#{random_card_color}'

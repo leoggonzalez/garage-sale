@@ -21,5 +21,8 @@
   .form-group
     = form.label :price
     = form.text_field :price, class: 'form-control', required: true
+  .form-group.form-check
+    = form.check_box :reserved, class: 'form-check-input'
+    = form.label :reserved, class: 'form-check-label'
   .actions
     = form.submit 'Submit', class: 'btn btn-primary'

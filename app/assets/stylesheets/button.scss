@@ -25,12 +25,24 @@
     font-size: 26px;
     &.button--wsp {
       color: var(--color-whatsapp);
+      &:hover {
+        color: var(--color-whatsapp-darker);
+        background-color: var(--color-whatsapp);
+      }
     }
     &.button--instagram {
       color: var(--color-mail-dark);
+      &:hover {
+        color: var(--color-mail);
+        background-color: var(--color-mail-darker);
+      }
     }
-    &.button--mail {
+    &.button--linkedin {
       color: var(--color-facebook-darker);
+      &:hover {
+        color: var(--color-facebook);
+        background-color: var(--color-facebook-darker);
+      }
     }
   }
 

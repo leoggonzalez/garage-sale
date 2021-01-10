@@ -7,20 +7,18 @@ header.mb-3
       tr
         th scope="col" id
         th scope="col" Name
-        th scope="col" Description
-        th scope="col" Url
         th scope="col" Price
         th scope="col" Images
+        th scope="col" Reserved
         th scope="col" Actions
     tbody
       - @products.each do |product|
         tr
           th scope="row" = product.id
           td = product.name
-          td = product.description
-          td = product.url
           td = product.price
           td = product.images.count
+          td = product.reserved ? 'Yes' : 'No'
           td
             .admin-table__actions
               a.btn.btn-primary.btn-sm href=admin_product_url(product)
