@@ -6,8 +6,11 @@
     a href=@product.url target="_blank" rel="noopener noreferrer" More Info
     .grid-card__price
       h2
-        = fa_icon "euro"
-        span = (@product.price).round
+        - if @product.price === 0
+          span free
+        - else
+          = fa_icon "euro"
+          span = (@product.price).round
 .grid-card.grid-card--image.grid-card--2
   .slider
     .slider__arrow.slider__arrow--previous

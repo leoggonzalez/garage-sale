@@ -29,8 +29,11 @@
         = link_to 'See more', product_path(product)
       footer.grid-card__price
         h3
-          = fa_icon "euro"
-          span = (product.price).round
+          - if product.price === 0
+            span free
+          - else
+            = fa_icon "euro"
+            span = (product.price).round
 .grid-card.grid-card--avatar class='grid-card--#{random_card_color}'
   .stack
     .grid-card__image
