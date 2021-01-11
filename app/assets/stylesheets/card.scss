@@ -62,8 +62,8 @@
       padding: 6px 12px;
       text-transform: uppercase;
       border-radius: var(--card-border-radius);
-      -webkit-mask-image: url("grunge.png");
-      mask-image: url("grunge.png");
+      -webkit-mask-image: image-url("grunge.png");
+      mask-image: image-url("grunge.png");
       -webkit-mask-size: 944px 604px;
       mask-size: 944px 604px;
       mix-blend-mode: multiply;
